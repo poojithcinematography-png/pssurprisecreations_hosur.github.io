@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSsurpriseCreations - Pro</title>
+<head>
+<meta name="google-site-verification" content="pssurprise" />
+</head>
+<style>
+body { margin:0; font-family:'Segoe UI',sans-serif; background:#f5f5f5; }
+header { background:linear-gradient(135deg,#ff4e50,#f9d423); color:white; text-align:center; padding:60px 20px; }
+.logo { width:200px; height:200px; border-radius:60%; border:10px solid rgb(255, 255, 255); }
+nav { background:#111; padding:10px; text-align:center; }
+nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+.section { padding:40px 20px; text-align:center; }
+.services { display:flex; flex-wrap:wrap; justify-content:center; }
+.card { background:white; margin:15px; padding:20px; width:250px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+.card:hover { transform:scale(1.05); transition:0.3s; }
+.btn { background:#ff4e50; color:white; padding:10px 20px; border-radius:20px; border:none; cursor:pointer; }
+footer { background:#111; color:white; padding:20px; text-align:center;  }
+input, textarea, select { width:80%; padding:10px; margin:10px; border-radius:8px; border:1px solid #ccc; }
+.whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:15px; border-radius:50%; font-size:20px; text-decoration:none; }
+.gallery img { width:250px; margin:10px; border-radius:10px; }
+</style><script>
+function sendToWhatsApp(event){
+  event.preventDefault();
+  let name=document.getElementById('name').value;
+  let phone=document.getElementById('phone').value;
+  let date=document.getElementById('date').value;
+  let type=document.getElementById('type').value;
+  let msg=document.getElementById('msg').value;
+
+  let text=`Booking:%0AName:${name}%0APhone:${phone}%0ADate:${date}%0AEvent:${type}%0ADetails:${msg}`;
+  window.open(`https://wa.me/916383623313?text=${text}`,'_blank');
+
+  saveBooking(name,phone,date,type,msg);
+}
+
+function saveBooking(name,phone,date,type,msg){
+  let bookings=JSON.parse(localStorage.getItem('bookings'))||[];
+  bookings.push({name,phone,date,type,msg});
+  localStorage.setItem('bookings',JSON.stringify(bookings));
+}
+
+function loadBookings(){
+  let bookings=JSON.parse(localStorage.getItem('bookings'))||[];
+  let output='';
+  bookings.forEach(b=>{
+    output+=`<div class='card'>${b.name} - ${b.type} - ${b.date}</div>`;
+  });
+  document.getElementById('adminData').innerHTML=output;
+}
+</script></head><body onload="loadBookings()"><header>
+  <img src="ps.html/ps.png" class="logo">
+  <h1>PSsurpriseCreations</h1>
+  <p>Make Every Moment Special 💖</p>
+  <a href="#booking" class="btn">Book Now</a>
+</header><nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#booking">Booking</a>
+  <a href="#" onclick="checkAdmin()">Admin</a>
+</nav><section id="about" class="section">
+  <h2>About Us</h2>
+  <p>We didn’t start with a big office, a big team, or big promises.
+Just a simple idea—make people feel special in ways they never forget.
+That’s how PS Surprise Creations began.
+
+Today, we are a growing team of passionate creators based in Hosur, united by one goal: turning ordinary moments into meaningful experiences. What started as small surprise setups and birthday decorations has now evolved into a creative space where emotions, design, and execution come together seamlessly.
+
+For us, an event isn’t just decoration.
+It’s a memory in the making.
+Every balloon we place, every light we set, every detail we design—it all has a purpose. Whether it’s a surprise birthday, a proposal, a baby shower, or a corporate event, we bring the same energy, care, and attention to every setup. Because we believe every celebration should feel personal, never pre-made.</p><br>
+
+<h1>What makes us different?</h1>
+<p>We don’t just “manage events.” We feel them.
+
+We understand that behind every event, there’s a story—someone planning a heartfelt surprise, a brand building its presence, or a family celebrating a special milestone. And we treat every moment with the importance it deserves.
+
+“Our strength lies in our team”</p>
+<h1>Meet Our Team</h1>
+<p>Behind every setup is a group of individuals who bring ideas to life with creativity, coordination, and dedication.</p><br>
+<img src="ps.html/poojith.png" class="logo"><br>
+<h2><strong>Poojith – Founder & Creative Head</strong></h2><br>
+<img src="ps.html/sudharsan.png" class="logo"><br>
+<h2><strong>Sudharsan – Operations Manager</strong></h2><br>
+<img src="ps.html/sasi.png" class="logo"><br>
+<h2><strong>Sasi – Event Coordinator</strong></h2><br>
+<img src="ps.html/balaji.png" class="logo"><br>
+<h2><strong>Balaji – Client Relationship Manager</strong></h2><br>
+<img src="ps.html/kishore.png" class="logo"><br>
+<h2><strong>Kishore – Design & Concept Lead</strong></h2><br>
+<img src="ps.html/ajith.png" class="logo"><br>
+<h2><strong>Ajith – Decoration Specialist</strong></h2><br>
+<img src="ps.html/kanagaraj.png" class="logo"><br>
+<h2><strong>Kanagaraj – Setup & Execution Lead</strong></h2><br>
+<img src="ps.html/prithika1.png" class="logo"><br>
+<h2><strong>Prithika – Logistics Coordinator</strong></h2><br>
+<img src="ps.html/nanthini.png" class="logo"><br>
+<h2><strong>Nanthini – Social Media & Content Manager</strong></h2><br>
+<img src="ps.html/adith.png" class="logo"><br>
+<h2><strong>Adith – Support & On-ground Team</strong></h2><br>
+Each member plays a vital role in ensuring that every event is executed smoothly—from the first idea to the final detail.
+
+We are constantly learning, experimenting, and evolving—because creativity never stands still.
+<h1>Our Promise</h1>
+<p>Simple setup,<br>
+Strong emotions,<br>
+Lasting memories..</p>
+</section><section id="services" class="section">
+  <h2>Services</h2>
+  <div class="services">
+    <div class="card">🎉 Birthday</div>
+    <div class="card">💍 Proposal</div>
+    <div class="card">🎁 Anniversary</div>
+    <div class="card">👶 Baby shower</div>
+    <div class="card">💒 Wedding</div>
+    <div class="card">🏢 Corporate</div>
+  </div>
+</section><section id="gallery" class="section gallery">
+  <h2>Gallery</h2>
+  <img src="ps.html/ck1.png">
+  <img src="ps.html/dc2.png">
+  <img src="ps.html/ck2.png">
+  <img src="ps.html/dc1.png">
+</section><section id="booking" class="section">
+  <h2>Booking</h2>
+  <form onsubmit="sendToWhatsApp(event)">
+    <input id="name" placeholder="Name" required><br>
+    <input id="phone" placeholder="Phone" required><br>
+    <input id="date" type="date" required><br>
+    <select id="type" required>
+      <option value="">Select</option>
+      <option>Birthday</option>
+      <option>Proposal</option>
+      <option>Anniversary</option>
+      <option>Baby shower</option>
+      <option>Wedding</option>
+      <option>Corporate</option>
+    </select><br>
+    <textarea id="msg" placeholder="Details"></textarea><br>
+    <button class="btn">Book Now</button>
+  </form>
+<section id="admin" class="section" style="display:none;">
+  <h2>Admin Panel</h2>
+  
+  <button onclick="clearBookings()" class="btn">Clear All Bookings</button>
+
+  <div id="adminData"></div>
+</section>
+<script>function checkAdmin(){
+  let pass = prompt("Enter Admin Password:");
+
+  if(pass === "1234"){ 
+    document.getElementById("admin").style.display = "block";
+    loadBookings();
+  } else {
+    alert("Wrong Password!");
+    document.getElementById("admin").style.display = "none";
+  }
+}</script>
+<script>
+function clearBookings(){
+  let confirmDelete = confirm("Are you sure to delete all bookings?");
+
+  if(confirmDelete){
+    localStorage.removeItem('bookings');
+    document.getElementById('adminData').innerHTML = "";
+    alert("All bookings cleared!");
+  }
+}
+</script><br>
+<footer>
+  <p>© 2025 PSsurpriseCreations</p>
+  <p>Contact: +91 63836 23313</p>
+  <p>Instagram:👇</p><a href="https://www.instagram.com/pssurprisecreations_hosur" target="_blank">@pssurprisecreations_hosur</a>
+</footer><a class="whatsapp" href="https://wa.me/+916383623313">💬Text me</a>
+
+</body>
+</html>
